@@ -12,7 +12,6 @@ model.load("best_model_svr_23_01_24_17")
 
 # Open the webcam
 cap = cv2.VideoCapture(0)
-frame_count = 0
 
 # While the webcam is open
 while cap.isOpened():
