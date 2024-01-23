@@ -1,8 +1,13 @@
-![Alt text](readme/simplepose.png)
+
+![simplepose](https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/bf52f092-8729-4246-b06b-b10e27dddb97)
 
 Simple Head Pose is a lightweight, modular and expandible framework crafted for the task of the head pose estimation, in which the euler angles of the head needs to be predicted given an image. Made with ease of use in mind and ready to use out of the box with minimal effort and line of code.
 
-    video here
+
+
+https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/334360aa-b2c2-4ed8-929f-90bcb968cc01
+
+
 
 ## Idea
 The chosen approach was carefully selected to prioritize reliability and robustness in various environmental conditions. This is why the framework's pipeline is designed and splitted in such tasks:
@@ -46,6 +51,9 @@ Other than simply fetching the head pose estimation, you can also use the model 
 dest_image = model.draw(src_image, poses, landmarks, bbox, draw_face=True, draw_person=False, draw_lms=False, draw_axis=True)
 cv2.imshow("Image", image)
 ```
+
+![example](https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/27ad917a-204d-4c2b-b29f-6ee0d4342bb7)
+
 
 The function draw takes in input the in which you'd like to write onto, and the list of poses and landmarks to draw them (if specified) alongside the bounding boxes of the found person/faces. Then some flags to specify what to actually draw on the image. If you'd like a result as shown in the video example, you can simply leave the function without calling any flags since they're on by default (or call the function as we did above).
 
