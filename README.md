@@ -8,11 +8,7 @@ Simple Head Pose is a lightweight, modular and expandible framework crafted for 
 ## Video example
 Note that being a synthethic benchmark the performance are lower than a real scenario video.
 
-
-https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/fba1205e-4ac2-418e-b869-05fe1dab67d3
-
-
-
+https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/7ec5ee92-0443-4514-b4a8-5f29145ed5e8
 
 ## Idea
 The chosen approach was carefully selected to prioritize reliability and robustness in various environmental conditions. This is why the framework's pipeline is designed and splitted in such tasks:
