@@ -23,4 +23,4 @@ model.test("test")
 
 # Or we can simply pass a single image to the predict function: 
 # it returns the predicted pose parameters and the landmarks if specified
-angles, lms = model.predict("test/image00014.jpg", return_landmarks=True)
+angles, lms = model.predict("your_image_path", return_landmarks=True)
