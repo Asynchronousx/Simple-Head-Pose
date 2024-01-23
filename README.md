@@ -3,11 +3,7 @@
 
 Simple Head Pose is a lightweight, modular and expandible framework crafted for the task of the head pose estimation, in which the euler angles of the head needs to be predicted given an image. Made with ease of use in mind and ready to use out of the box with minimal effort and line of code.
 
-
-
-https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/334360aa-b2c2-4ed8-929f-90bcb968cc01
-
-
+https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/d7c824ab-4828-4a8a-9e66-b414637b12b7
 
 ## Idea
 The chosen approach was carefully selected to prioritize reliability and robustness in various environmental conditions. This is why the framework's pipeline is designed and splitted in such tasks:
