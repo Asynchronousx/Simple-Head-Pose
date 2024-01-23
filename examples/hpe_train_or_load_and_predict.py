@@ -20,7 +20,7 @@ drawer = drawer.Drawer()
 model.load("best_model_svr_18_01_24_19")
 
 # Test the model with a given image 
-image_path = "LAB/test.png"
+image_path = "your_image_path"
 poses, lms, bbox = model.predict(image_path)
 
 # Print results
