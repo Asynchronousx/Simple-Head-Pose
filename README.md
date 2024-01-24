@@ -59,7 +59,7 @@ model.load("best_model_svr_23_01_24_17")
 yaw, pitch, roll = model.predict("examples/faces_1.png")[0][0]
 ```
 ### Multiple faces: 
-But, what if we do have multiple faces in an image? We simply access the different poses from the list iterating or directly!
+But, what if we do have multiple faces in an image? We simply access the different poses from the list: iterating or directly!
 
 ```python
 import hpe
