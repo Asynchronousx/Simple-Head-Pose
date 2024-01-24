@@ -90,9 +90,9 @@ poses, landmarks, bbox = model.predict("path_to_your_image")
 ```
 
 Here we've returned all the returning outputs of the predict function: 
-1. **Poses**, a list that will contains the yaw, pitch and roll angles
-2. **Landmarks**, a list that will contain coordinate (x,y) tuples of the most important facial landmarks extracted from the mesher modell
-3. **Bbox**: A dictionary containing the bounding box of the person and the face if detected.
+1. **Poses**, a list that will contains tuples in the format:  [(yaw, pitch and roll)], ..] angles
+2. **Landmarks**, a list that will contain coordinate (x,y) ([(x,y), ...] tuples of the most important facial landmarks extracted from the mesher modell
+3. **Bbox**: A dictionary containing the bounding box of the person and the face if detected ({0: {person: [x1,y1..], face: [x1, y1..]}, ...}
 
 From there you can use those outputs as you please.
 
