@@ -46,7 +46,11 @@ model = hpe.SimplePose()
 model.load("path_to_your_model")
 yaw, pitch, roll = model.predict("path_to_your_image")[0][0]
 ```
-
+We can then use those angles as we want. For example, printing it!
+```python
+print(yaw, pitch, roll)
+... -0.14561467791220722 -0.09875710772861299 0.18356302592449872
+```
 And you're good to go!
 
 ### Single Face
