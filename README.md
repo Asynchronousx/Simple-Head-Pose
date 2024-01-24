@@ -210,6 +210,14 @@ You need simply to do those things in order:
 
 I do hope that's this is simply enough and let you expand this framework however you want and please.
 
+### Head Pose Models Class standards
+If you want to specify your custom class for the estimation, you need to be sure to follow this schema: the only real requirement is that the new model implemented must have three fundamental functions: train, eval and predict!
+- The train function should train the model based on the given training data (and assign the best model to its class instance to make predictions; see the model class for further reference).
+- The eval function should evaluate the model based on the given test data (print results).
+- The predict function should return, given an image, the pose parameters and its landmark.
+
+Thats it!
+
 ### Use your own mesher
 Inside the file **poseutils.py** you can actually find the Mesher class. The mesher class is a wrapper that will return different types of mesher based on the selection choice made at the beginning of the main file (when specifying which mesher you want to use). If you don't feel or can't use the mediapipe mesher for some reason, you can easily add your! All you have to do is to define your mesher class as the following pseudocode:
 
@@ -248,15 +256,6 @@ def __init__(self):
         ...
         other landmarks you want to use there
 ```
-
-
-### Class standards
-If you want to specify your custom class, you need to be sure to follow this schema: the only real requirement is that the new model implemented must have three fundamental functions: train, eval and predict!
-- The train function should train the model based on the given training data (and assign the best model to its class instance to make predictions; see the model class for further reference).
-- The eval function should evaluate the model based on the given test data (print results).
-- The predict function should return, given an image, the pose parameters and its landmark.
-
-Thats it!
 
 ## Environment and dependencies
 You can find a ready-to-use requirement.txt in this repo to be used with your venv or conda envs. Anyway, the major library used in this framework are: 
