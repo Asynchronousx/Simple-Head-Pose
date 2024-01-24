@@ -36,7 +36,7 @@ For a quick startup:
 ```bash
 git clone https://github.com/Asynchronousx/Simple-Head-Pose
 cd Simple-Head-Pose
-conda create --name <env> --file requiremenst.txt
+conda create --name <env> --file requirements.txt
 ```
 Then, simply create a new file inside the folder (or outside, but remember to specify the correct path) and put into it:
 
