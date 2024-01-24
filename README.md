@@ -32,7 +32,13 @@ The dataset used to train those models is the [AFLW2000-3D](http://www.cbsr.ia.a
 As long as the dataset you want to use is formatted like that, you can use every source of data, even yours. More on how to train the models in the *Train* section.
 
 ## Usage
-All you have to do is to clone the repo and import the module into your main file as follow: 
+For a quick startup: 
+```bash
+git clone https://github.com/Asynchronousx/Simple-Head-Pose
+cd Simple-Head-Pose
+conda create --name <env> --file requirementst.txt
+```
+Then, simply create a new file inside the folder (or outside, but remember to specify the correct path) and put into it:
 
 ```python
 import hpe
@@ -40,6 +46,7 @@ model = hpe.SimplePose()
 model.load("path_to_your_model")
 yaw, pitch, roll = model.predict("path_to_your_image")[0]
 ```
+And you're good to go!
 
 Here, we import our module then instantiating an empty SimplePose object and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
 
