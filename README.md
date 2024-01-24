@@ -72,7 +72,7 @@ model.load("best_model_svr_23_01_24_17")
 poses = model.predict("examples/faces_1.png")[0]
 ... access the poses list as you prefer!
 ```
-## Full prediction outputs
+### Full prediction outputs
 You can also fetch all the outputs from the prediction function as follows:
 
 ```python
@@ -83,7 +83,7 @@ poses, landmarks, bbox = model.predict("examples/faces_1.png")
 ```
 Here, we do not access directly to what's returned but instead specify all the returning prediction values (poses, landmarks and bounding boxes) as above.
 
-## Usage out of the box 
+### Usage out of the box 
 If you want to download this repo and immediately displaying results, you can! Just start **main_video.py** if you want to stream results from a video source (i.e: your webcam or a video file, default is your webcam) or if you want to just display it from an image, just run **main_image.py**. If you also want to specify a custom video source or image, just edit the relative code with your desired source/path!
 
 ### Further explanation
