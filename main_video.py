@@ -5,7 +5,7 @@ import cv2
 model = hpe.SimplePose(model_type="svr")
 
 # Train the model with the given dataset folder
-#model.train("AFLW2000", save=True, split=0.1, ext="jpg")
+# model.train("AFLW2000", save=True, split=0.1, ext="jpg")
 
 # Load a pretrained model from the trained folder
 model.load("best_model_svr_23_01_24_17")
