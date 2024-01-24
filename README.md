@@ -68,9 +68,19 @@ model.load("best_model_svr_23_01_24_17")
 poses = model.predict("examples/faces_1.png")[0]
 ... access the poses list as you prefer!
 ```
+## Full prediction outputs
+You can also fetch all the outputs from the prediction function as follows:
+
+```python
+import hpe
+model = hpe.SimplePose()
+model.load("best_model_svr_23_01_24_17")
+poses, landmarks, bbox = model.predict("examples/faces_1.png")
+```
+Here, we do not access directly to what's returned but instead specify all the returning prediction values (poses, landmarks and bounding boxes) as above.
 
 ### Further explanation
-Here, we import our module then instantiating an empty SimplePose object (by default, we use SVR) and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
+Here, what we did is import our module then instantiating an empty SimplePose object (by default, we use SVR) and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
 
 We then access the first element (pose angles) and from this again we access the first element (first detected pose) and extracting it right into our three variables: **yaw pitch and roll**. And, **that's it!** You can now use your euler angles as you please. 
 
