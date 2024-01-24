@@ -46,7 +46,11 @@ model = hpe.SimplePose()
 model.load("path_to_your_model")
 yaw, pitch, roll = model.predict("path_to_your_image")[0][0]
 ```
-Here's an out of the box pre-configured test file: 
+
+And you're good to go!
+
+### Single Face
+Now let's see a more in-depth example when we do have only **one face** into our images. We can simply access the first element of the predictions (the poses list) as above and extracting the yaw, pitch and roll values directly like that:
 
 ```python
 import hpe
@@ -54,9 +58,18 @@ model = hpe.SimplePose()
 model.load("best_model_svr_23_01_24_17")
 yaw, pitch, roll = model.predict("examples/faces_1.png")[0][0]
 ```
+### Multiple faces: 
+But, what if we do have multiple faces in an image? We simply access the different poses from the list iterating or directly!
 
-And you're good to go!
+```python
+import hpe
+model = hpe.SimplePose()
+model.load("best_model_svr_23_01_24_17")
+poses = model.predict("examples/faces_1.png")[0]
+... access the poses list as you prefer!
+```
 
+### Further explanation
 Here, we import our module then instantiating an empty SimplePose object (by default, we use SVR) and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
 
 We then access the first element (pose angles) and from this again we access the first element (first detected pose) and extracting it right into our three variables: **yaw pitch and roll**. And, **that's it!** You can now use your euler angles as you please. 
