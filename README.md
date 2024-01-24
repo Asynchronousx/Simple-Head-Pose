@@ -83,6 +83,9 @@ poses, landmarks, bbox = model.predict("examples/faces_1.png")
 ```
 Here, we do not access directly to what's returned but instead specify all the returning prediction values (poses, landmarks and bounding boxes) as above.
 
+## Usage out of the box 
+If you want to download this repo and immediately displaying results, you can! Just start **main_video.py** if you want to stream results from a video source (i.e: your webcam or a video file, default is your webcam) or if you want to just display it from an image, just run **main_image.py**. If you also want to specify a custom video source or image, just edit the relative code with your desired source/path!
+
 ### Further explanation
 Here, what we did is import our module then instantiating an empty SimplePose object (by default, we use SVR) and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
 
@@ -103,9 +106,6 @@ cv2.imshow("Image", image)
 
 
 The function draw takes in input the in which you'd like to write onto, and the list of poses and landmarks to draw them (if specified) alongside the bounding boxes of the found person/faces. Then some flags to specify what to actually draw on the image. If you'd like a result as shown in the video example, you can simply leave the function without calling any flags since they're on by default (or call the function as we did above).
-
-### Displaying out of the box 
-If you want to download this repo and immediately displaying results, you can! Just start **main_video.py** if you want to stream results from a video source (i.e: your webcam or a video file) or if you want to just display it from an image, just run **main_image.py**. If you also want to specify a custom video source or image, just edit the relative code with your desired source/path!
 
 ## Further usage and examples
 As the model itself it's pretty simple to use, you can further inrease the complexity of what to use, how and when. For example, let's instantiate now a simple model as before and extracting all the returning parameters from the model:
