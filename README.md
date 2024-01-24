@@ -51,8 +51,8 @@ Here's an out of the box pre-configured test file:
 ```python
 import hpe
 model = hpe.SimplePose()
-model.load("path_to_your_model")
-yaw, pitch, roll = model.predict("path_to_your_image")[0][0]
+model.load("best_model_svr_23_01_24_17")
+yaw, pitch, roll = model.predict("examples/faces_1.png")[0][0]
 ```
 
 And you're good to go!
