@@ -50,7 +50,7 @@ yaw, pitch, roll = model.predict("path_to_your_image")[0][0]
 And you're good to go!
 
 ### Single Face
-Now let's see a more in-depth example when we do have only **one face** into our images. We can simply access the first element of the predictions (the poses list) as above and extracting the yaw, pitch and roll values directly like that:
+Now let's see a more in-depth example when we do have only **one face** into our images. We can simply access the first element of the predictions (the poses list) as we did above and extracting the yaw, pitch and roll values directly like that:
 
 ```python
 import hpe
