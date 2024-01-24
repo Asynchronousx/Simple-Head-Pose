@@ -97,6 +97,7 @@ Other than simply fetching the head pose estimation, you can also use the model 
 dest_image = model.draw(src_image, poses, landmarks, bbox, draw_face=True, draw_person=False, draw_lms=False, draw_axis=True)
 cv2.imshow("Image", image)
 ```
+![image_screenshot_24 01 2024](https://github.com/Asynchronousx/Simple-Head-Pose/assets/38207760/93758a63-6991-4716-8e89-ae80c29ac32e)
 
 
 
