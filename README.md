@@ -59,7 +59,9 @@ And you're good to go!
 
 Here, we import our module then instantiating an empty SimplePose object (by default, we use SVR) and then loading a custom pretrained model (you can find various model in the pretrained folder). Once loaded, we can perform the prediction on a given image (or from a video stream if you prefer). **Predictions** inferred from the model will be a list containing three elements: **head angles, landmarks and bounding box coordinates**. 
 
-We then access the first element (pose angles) and from this again we access the first element (first detected pose) and extracting it right into our three variables: **yaw pitch and roll**. And, **that's it!** You can now use your euler angles as you please. Note that, if the image you passed contains more than one face and the model successfully recognize and estimate the pose from all of them, the poses list will contain obviously more than one element! Remeber to access them accordingly.
+We then access the first element (pose angles) and from this again we access the first element (first detected pose) and extracting it right into our three variables: **yaw pitch and roll**. And, **that's it!** You can now use your euler angles as you please. 
+
+Note that, if the *image you passed contains more than one face* and the model successfully recognize and estimate the pose from all of them, the *poses list will contain obviously more than one element*! That's why we access the prediction at *[0][0]*: We access the first returned prediction (poses) at the first fetched pose estimated (if present). Remeber to access them accordingly. More on this on further examples paragraph!
 
 ## Displaying Results
 Other than simply fetching the head pose estimation, you can also use the model to display relevant information about what the model \*actually\* did. If you'd like to show those results fetched from the predict function, you can use the builtin draw function: 
