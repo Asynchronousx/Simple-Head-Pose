@@ -210,6 +210,46 @@ You need simply to do those things in order:
 
 I do hope that's this is simply enough and let you expand this framework however you want and please.
 
+### Use your own mesher
+Inside the file **poseutils.py** you can actually find the Mesher class. The mesher class is a wrapper that will return different types of mesher based on the selection choice made at the beginning of the main file (when specifying which mesher you want to use). If you don't feel or can't use the mediapipe mesher for some reason, you can easily add your! All you have to do is to define your mesher class as the following pseudocode:
+
+```python
+# class mymesher:
+#     def __init__(self):
+#         self.landmarks_info = LMinfo()
+#         self.mesher = mymesher()
+#     def process(self, image):
+#         ...
+#         landmark = self.mesher.process(image)
+#         if landmark in self.landmarks_info.get():
+#           process landmark in some ways
+#         ...
+#         return landmark
+#####
+```
+and then, in the wrapper mesher class, add your model inside the elif as follow: 
+
+```python
+# ELIF: Other meshers can be added here if implemented in the poseutils library
+# elif mesher_type == "my_mesher":
+#    return my_mesher(parameters if needed)
+```
+Note that, *is fundamental for your mesher to have a process function which returns a flattened 1d array of [x1,y2,x2,y2..] x,y coordinates of the landmarks you want to use!
+
+### Use your own landmarks
+You can also increase or decrease the number of landmark you want to process with the mesher and the models in general. Inside poseutils.py aswell, you can find the **LMinfo** class. To add or remove landmarks you want to use, just edit the landmarks in the init function!
+
+```python
+def __init__(self):
+        # We assign to the class the following attributes
+        self.NOSE = 1
+        self.FOREHEAD = 10
+        self.LEFT_EYE = 33
+        ...
+        other landmarks you want to use there
+```
+
+
 ### Class standards
 If you want to specify your custom class, you need to be sure to follow this schema: the only real requirement is that the new model implemented must have three fundamental functions: train, eval and predict!
 - The train function should train the model based on the given training data (and assign the best model to its class instance to make predictions; see the model class for further reference).
