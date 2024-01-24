@@ -44,7 +44,7 @@ Then, simply create a new file inside the folder (or outside, but remember to sp
 import hpe
 model = hpe.SimplePose()
 model.load("path_to_your_model")
-yaw, pitch, roll = model.predict("path_to_your_image")[0]
+yaw, pitch, roll = model.predict("path_to_your_image")[0][0]
 ```
 Here's an out of the box pre-configured test file: 
 
