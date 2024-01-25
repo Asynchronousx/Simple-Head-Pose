@@ -64,10 +64,11 @@ class Regressor:
         if regressor_type == "svr":
 
             params = {
-                'estimator__kernel': ['rbf'],
+                'estimator__kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
                 'estimator__C': np.arange(0.6, 0.75, 0.01),
                 'estimator__gamma': np.arange(0.09, 0.1, 0.001),
-                'estimator__epsilon': np.arange(0.07, 0.08, 0.001)
+                'estimator__epsilon': np.arange(0.07, 0.08, 0.001),
+                'estimator__degree': [2,3,4]
             }
 
             return params
